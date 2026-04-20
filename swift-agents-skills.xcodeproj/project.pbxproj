@@ -10,9 +10,20 @@
 		2CF07D3F2F96D6CA0095C2F6 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2CF07D6C2F96E28E0095C2F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4277A12F89A514005A8C5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C4277A82F89A515005A8C5C;
+			remoteInfo = "swift-agents-skills";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2C4277A92F89A515005A8C5C /* swift-agents-skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-agents-skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		2CF07D682F96E28E0095C2F6 /* swift-agents-skillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-agents-skillsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -21,10 +32,22 @@
 			path = "swift-agents-skills";
 			sourceTree = "<group>";
 		};
+		2CF07D692F96E28E0095C2F6 /* swift-agents-skillsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "swift-agents-skillsTests";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2C4277A62F89A515005A8C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CF07D652F96E28E0095C2F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +62,7 @@
 			children = (
 				2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */,
 				2C4277AB2F89A515005A8C5C /* swift-agents-skills */,
+				2CF07D692F96E28E0095C2F6 /* swift-agents-skillsTests */,
 				2C4277AA2F89A515005A8C5C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4277A92F89A515005A8C5C /* swift-agents-skills.app */,
+				2CF07D682F96E28E0095C2F6 /* swift-agents-skillsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +101,29 @@
 			productReference = 2C4277A92F89A515005A8C5C /* swift-agents-skills.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2CF07D672F96E28E0095C2F6 /* swift-agents-skillsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CF07D702F96E28E0095C2F6 /* Build configuration list for PBXNativeTarget "swift-agents-skillsTests" */;
+			buildPhases = (
+				2CF07D642F96E28E0095C2F6 /* Sources */,
+				2CF07D652F96E28E0095C2F6 /* Frameworks */,
+				2CF07D662F96E28E0095C2F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CF07D6D2F96E28E0095C2F6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2CF07D692F96E28E0095C2F6 /* swift-agents-skillsTests */,
+			);
+			name = "swift-agents-skillsTests";
+			packageProductDependencies = (
+			);
+			productName = "swift-agents-skillsTests";
+			productReference = 2CF07D682F96E28E0095C2F6 /* swift-agents-skillsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -88,6 +136,10 @@
 				TargetAttributes = {
 					2C4277A82F89A515005A8C5C = {
 						CreatedOnToolsVersion = 26.3;
+					};
+					2CF07D672F96E28E0095C2F6 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 2C4277A82F89A515005A8C5C;
 					};
 				};
 			};
@@ -106,6 +158,7 @@
 			projectRoot = "";
 			targets = (
 				2C4277A82F89A515005A8C5C /* swift-agents-skills */,
+				2CF07D672F96E28E0095C2F6 /* swift-agents-skillsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -119,6 +172,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2CF07D662F96E28E0095C2F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -129,7 +189,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2CF07D642F96E28E0095C2F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CF07D6D2F96E28E0095C2F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C4277A82F89A515005A8C5C /* swift-agents-skills */;
+			targetProxy = 2CF07D6C2F96E28E0095C2F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2C4277B22F89A516005A8C5C /* Debug */ = {
@@ -330,6 +405,53 @@
 			};
 			name = Release;
 		};
+		2CF07D6E2F96E28E0095C2F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode26.swift-agents-skillsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-agents-skills.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/swift-agents-skills";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		2CF07D6F2F96E28E0095C2F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode26.swift-agents-skillsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-agents-skills.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/swift-agents-skills";
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -347,6 +469,15 @@
 			buildConfigurations = (
 				2C4277B52F89A516005A8C5C /* Debug */,
 				2C4277B62F89A516005A8C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CF07D702F96E28E0095C2F6 /* Build configuration list for PBXNativeTarget "swift-agents-skillsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CF07D6E2F96E28E0095C2F6 /* Debug */,
+				2CF07D6F2F96E28E0095C2F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
