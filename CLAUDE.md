@@ -1,4 +1,4 @@
-#  Project Context
+#  Global Code Instructions
 ## Overview
 - ios 26 SwiftUI app targeting iPhone
 - Minimum deployment: iOS 26
