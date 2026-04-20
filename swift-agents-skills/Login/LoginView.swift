@@ -9,6 +9,11 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var viewModel = LoginViewModel()
+    let onRegisterTapped: () -> Void
+
+    init(onRegisterTapped: @escaping () -> Void = {}) {
+        self.onRegisterTapped = onRegisterTapped
+    }
 
     var body: some View {
         let bindableViewModel = Bindable(viewModel)
@@ -50,7 +55,7 @@ struct LoginView: View {
                 .disabled(!viewModel.isFormValid)
                 .padding(.top, 8)
 
-                Button(action: {}) {
+                Button(action: onRegisterTapped) {
                     Text("Cadastrar")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.blue)

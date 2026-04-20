@@ -11,18 +11,20 @@ struct AuthCoordinatorView: View {
     enum Route: Hashable {
         case register
     }
-
+    
     @State private var path = NavigationPath()
-
+    
     var body: some View {
         NavigationStack(path: $path) {
-            LoginView()
-                .navigationDestination(for: Route.self) { route in
-                    switch route {
-                    case .register:
-                        RegisterView()
-                    }
+            LoginView {
+                path.append(Route.register)
+            }
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .register:
+                    RegisterView()
                 }
+            }
         }
     }
 }

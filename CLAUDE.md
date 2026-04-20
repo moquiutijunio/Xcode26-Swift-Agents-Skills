@@ -13,7 +13,7 @@
 - Dependency injection through the SwiftUI enviroment
 
 ## Testing
-//- Use Swift Testing framework - NOT XCTest
+- Use Swift Testing framework - NOT XCTest
 - Test functions us @Test attribute
 - Use #expect() for assertions - NOT XCTAssertEqual
 - Run with RunAllTests or RunSomeTests MCP Tools
