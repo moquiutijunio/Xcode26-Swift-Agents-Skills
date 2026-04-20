@@ -11,7 +11,7 @@ import SwiftUI
 struct swift_agents_skillsApp: App {
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            AuthCoordinatorView()
         }
     }
 }
