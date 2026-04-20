@@ -29,7 +29,7 @@ As a starting point for these experiments, the project uses a **SwiftUI registra
 ### Registration Form
 
 <p align="center">
-  <img width="250" alt="Empty Form" src="swift-agents-skills/Assets.xcassets/form-empty.imageset/form-empty.png"> <img width="250" alt="Form" src="swift-agents-skills/Assets.xcassets/form.imageset/form.png">
+  <img width="250" alt="Login" src="swift-agents-skills/Assets.xcassets/login.imageset/login.png"> <img width="250" alt="Empty Form" src="swift-agents-skills/Assets.xcassets/form-empty.imageset/form-empty.png"> <img width="250" alt="Form" src="swift-agents-skills/Assets.xcassets/form.imageset/form.png">
 </p>
 
 ## References
