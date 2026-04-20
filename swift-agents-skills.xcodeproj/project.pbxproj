@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2CF07D3F2F96D6CA0095C2F6 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2C4277A92F89A515005A8C5C /* swift-agents-skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-agents-skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		2C4277A02F89A514005A8C5C = {
 			isa = PBXGroup;
 			children = (
+				2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */,
 				2C4277AB2F89A515005A8C5C /* swift-agents-skills */,
 				2C4277AA2F89A515005A8C5C /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF07D3F2F96D6CA0095C2F6 /* CLAUDE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
