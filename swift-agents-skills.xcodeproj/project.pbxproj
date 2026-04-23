@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CF07D3F2F96D6CA0095C2F6 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */; };
+		2C350E922F9ADA3500E64AA2 /* CODEX.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C350E912F9ADA3500E64AA2 /* CODEX.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,8 +21,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C350E912F9ADA3500E64AA2 /* CODEX.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODEX.md; sourceTree = "<group>"; };
 		2C4277A92F89A515005A8C5C /* swift-agents-skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-agents-skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		2CF07D682F96E28E0095C2F6 /* swift-agents-skillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-agents-skillsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 		2C4277A02F89A514005A8C5C = {
 			isa = PBXGroup;
 			children = (
-				2CF07D3E2F96D6CA0095C2F6 /* CLAUDE.md */,
+				2C350E912F9ADA3500E64AA2 /* CODEX.md */,
 				2C4277AB2F89A515005A8C5C /* swift-agents-skills */,
 				2CF07D692F96E28E0095C2F6 /* swift-agents-skillsTests */,
 				2C4277AA2F89A515005A8C5C /* Products */,
@@ -168,7 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CF07D3F2F96D6CA0095C2F6 /* CLAUDE.md in Resources */,
+				2C350E922F9ADA3500E64AA2 /* CODEX.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
