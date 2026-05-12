@@ -110,5 +110,12 @@ struct LoginViewExtraTests {
         // We cannot tap the button without UI testing tools; ensure view builds
         #expect(called == false)
     }
-}
 
+    @MainActor
+    @Test func viewInitializesWithForgotPasswordAction() {
+        var called = false
+        let view = LoginView(onForgotPasswordTapped: { called = true })
+        _ = view.body
+        #expect(called == false)
+    }
+}

@@ -27,4 +27,3 @@ Apply these instructions only when working inside `swift-agents-skillsTests`.
 - Keep test names descriptive and behavior-oriented.
 - Prefer small helpers over duplicated setup.
 - If a test is expected to fail temporarily, mark it explicitly with the appropriate Swift Testing trait instead of leaving it flaky.
-

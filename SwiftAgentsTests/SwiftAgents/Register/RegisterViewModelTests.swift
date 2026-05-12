@@ -1,16 +1,10 @@
-//
-//  RegisterViewModelTests.swift
-//  swift-agents-skillsTests
-//
-//  Created by Junio Cesar Moquiuti on 20/04/26.
-//
-
 import Testing
 @testable import swift_agents_skills
+import SwiftUI
 
 @Suite("RegisterViewModel")
 struct RegisterViewModelTests {
-    @Test func fullNameValidationRejectsEmptyAndSingleNameValues() {
+    @Test func fullNameValidationRejectsEmptyAndSingleWordNames() {
         let viewModel = RegisterViewModel()
 
         viewModel.fullName = ""
@@ -20,10 +14,10 @@ struct RegisterViewModelTests {
         #expect(viewModel.fullNameError == "Digite nome e sobrenome")
     }
 
-    @Test func fullNameValidationAcceptsTrimmedFullNames() {
+    @Test func fullNameValidationAcceptsFullNameWithExtraWhitespace() {
         let viewModel = RegisterViewModel()
 
-        viewModel.fullName = "   Junio Cesar   "
+        viewModel.fullName = "   Junio   Moquiuti   "
 
         #expect(viewModel.fullNameError == nil)
     }
@@ -38,37 +32,38 @@ struct RegisterViewModelTests {
         #expect(viewModel.emailError == "E-mail inválido")
     }
 
-    @Test func emailValidationAcceptsValidEmail() {
+    @Test func emailValidationAcceptsValidEmailAndTrimsWhitespace() {
         let viewModel = RegisterViewModel()
 
-        viewModel.email = "junio@example.com"
+        viewModel.email = "   junio@example.com   "
 
         #expect(viewModel.emailError == nil)
     }
 
-    @Test func confirmEmailValidationRejectsEmptyInvalidAndMismatchedValues() {
+    @Test func confirmEmailValidationRequiresValueFormatAndMatch() {
         let viewModel = RegisterViewModel()
-        viewModel.email = "junio@example.com"
 
+        viewModel.email = "junio@example.com"
         viewModel.confirmEmail = ""
         #expect(viewModel.confirmEmailError == "Confirme seu e-mail")
 
         viewModel.confirmEmail = "invalid-email"
         #expect(viewModel.confirmEmailError == "E-mail inválido")
 
-        viewModel.confirmEmail = "outro@example.com"
+        viewModel.confirmEmail = "other@example.com"
         #expect(viewModel.confirmEmailError == "Os e-mails não coincidem")
     }
 
-    @Test func confirmEmailValidationAcceptsMatchingEmailIgnoringCase() {
+    @Test func confirmEmailValidationAcceptsMatchingEmailIgnoringCaseAndWhitespace() {
         let viewModel = RegisterViewModel()
+
         viewModel.email = "junio@example.com"
-        viewModel.confirmEmail = "JUNIO@EXAMPLE.COM"
+        viewModel.confirmEmail = "   JUNIO@EXAMPLE.COM   "
 
         #expect(viewModel.confirmEmailError == nil)
     }
 
-    @Test func passwordValidationRejectsEmptyAndShortPasswords() {
+    @Test func passwordValidationRejectsEmptyAndShortValues() {
         let viewModel = RegisterViewModel()
 
         viewModel.password = ""
@@ -78,7 +73,7 @@ struct RegisterViewModelTests {
         #expect(viewModel.passwordError == "A senha deve ter no mínimo 6 caracteres")
     }
 
-    @Test func passwordValidationAcceptsMinimumLengthPassword() {
+    @Test func passwordValidationAcceptsMinimumLength() {
         let viewModel = RegisterViewModel()
 
         viewModel.password = "123456"
@@ -86,10 +81,10 @@ struct RegisterViewModelTests {
         #expect(viewModel.passwordError == nil)
     }
 
-    @Test func confirmPasswordValidationRejectsEmptyShortAndMismatchedPasswords() {
+    @Test func confirmPasswordValidationRequiresValueLengthAndMatch() {
         let viewModel = RegisterViewModel()
-        viewModel.password = "123456"
 
+        viewModel.password = "123456"
         viewModel.confirmPassword = ""
         #expect(viewModel.confirmPasswordError == "Confirme sua senha")
 
@@ -102,15 +97,19 @@ struct RegisterViewModelTests {
 
     @Test func confirmPasswordValidationAcceptsMatchingPassword() {
         let viewModel = RegisterViewModel()
+
         viewModel.password = "123456"
         viewModel.confirmPassword = "123456"
 
         #expect(viewModel.confirmPasswordError == nil)
     }
 
-    @Test func isFormValidReturnsTrueOnlyWhenAllFieldsAreValid() {
+    @Test func isFormValidOnlyWhenEveryFieldIsValid() {
         let viewModel = RegisterViewModel()
-        viewModel.fullName = "Junio Cesar"
+
+        #expect(viewModel.isFormValid == false)
+
+        viewModel.fullName = "Junio Moquiuti"
         viewModel.email = "junio@example.com"
         viewModel.confirmEmail = "junio@example.com"
         viewModel.password = "123456"
@@ -133,6 +132,20 @@ struct RegisterViewModelTests {
         #expect(viewModel.didEditConfirmEmail)
         #expect(viewModel.didEditPassword)
         #expect(viewModel.didEditConfirmPassword)
+    }
+
+    @Test func createAccountCanBeCalledWithValidForm() {
+        let viewModel = RegisterViewModel()
+
+        viewModel.fullName = "Junio Moquiuti"
+        viewModel.email = "junio@example.com"
+        viewModel.confirmEmail = "junio@example.com"
+        viewModel.password = "123456"
+        viewModel.confirmPassword = "123456"
+
+        viewModel.createAccount()
+
+        #expect(true)
     }
 }
 

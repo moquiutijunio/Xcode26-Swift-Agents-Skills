@@ -10,19 +10,23 @@ import SwiftUI
 struct AuthCoordinatorView: View {
     enum Route: Hashable {
         case register
+        case forgotPassword
     }
     
     @State private var path = NavigationPath()
     
     var body: some View {
         NavigationStack(path: $path) {
-            LoginView {
-                path.append(Route.register)
-            }
+            LoginView(
+                onRegisterTapped: { path.append(Route.register) },
+                onForgotPasswordTapped: { path.append(Route.forgotPassword) }
+            )
             .navigationDestination(for: Route.self) { route in
                 switch route {
                 case .register:
                     RegisterView()
+                case .forgotPassword:
+                    ForgotPasswordView()
                 }
             }
         }

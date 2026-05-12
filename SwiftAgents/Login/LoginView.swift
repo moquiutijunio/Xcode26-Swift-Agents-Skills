@@ -10,9 +10,14 @@ import SwiftUI
 struct LoginView: View {
     @State private var viewModel = LoginViewModel()
     let onRegisterTapped: () -> Void
+    let onForgotPasswordTapped: () -> Void
 
-    init(onRegisterTapped: @escaping () -> Void = {}) {
+    init(
+        onRegisterTapped: @escaping () -> Void = {},
+        onForgotPasswordTapped: @escaping () -> Void = {}
+    ) {
         self.onRegisterTapped = onRegisterTapped
+        self.onForgotPasswordTapped = onForgotPasswordTapped
     }
 
     var body: some View {
@@ -64,6 +69,15 @@ struct LoginView: View {
                 .buttonStyle(.plain)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.top, 4)
+
+                Button(action: onForgotPasswordTapped) {
+                    Text("Esqueci minha senha")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.blue)
+                        .underline()
+                }
+                .buttonStyle(.plain)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
             .padding()
         }

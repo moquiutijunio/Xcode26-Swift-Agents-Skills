@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C350E922F9ADA3500E64AA2 /* CODEX.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C350E912F9ADA3500E64AA2 /* CODEX.md */; };
+		2C350E922F9ADA3500E64AA2 /* AGENTS.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C350E912F9ADA3500E64AA2 /* AGENTS.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,20 +21,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C350E912F9ADA3500E64AA2 /* CODEX.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODEX.md; sourceTree = "<group>"; };
+		2C350E912F9ADA3500E64AA2 /* AGENTS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGENTS.md; sourceTree = "<group>"; };
 		2C4277A92F89A515005A8C5C /* swift-agents-skills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-agents-skills.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF07D682F96E28E0095C2F6 /* swift-agents-skillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-agents-skillsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2C4277AB2F89A515005A8C5C /* swift-agents-skills */ = {
+		2C4277AB2F89A515005A8C5C /* SwiftAgents */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "swift-agents-skills";
+			path = SwiftAgents;
 			sourceTree = "<group>";
 		};
-		2CF07D692F96E28E0095C2F6 /* swift-agents-skillsTests */ = {
+		2CF07D692F96E28E0095C2F6 /* SwiftAgentsTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "swift-agents-skillsTests";
+			path = SwiftAgentsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -60,9 +60,9 @@
 		2C4277A02F89A514005A8C5C = {
 			isa = PBXGroup;
 			children = (
-				2C350E912F9ADA3500E64AA2 /* CODEX.md */,
-				2C4277AB2F89A515005A8C5C /* swift-agents-skills */,
-				2CF07D692F96E28E0095C2F6 /* swift-agents-skillsTests */,
+				2C350E912F9ADA3500E64AA2 /* AGENTS.md */,
+				2C4277AB2F89A515005A8C5C /* SwiftAgents */,
+				2CF07D692F96E28E0095C2F6 /* SwiftAgentsTests */,
 				2C4277AA2F89A515005A8C5C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,7 +92,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2C4277AB2F89A515005A8C5C /* swift-agents-skills */,
+				2C4277AB2F89A515005A8C5C /* SwiftAgents */,
 			);
 			name = "swift-agents-skills";
 			packageProductDependencies = (
@@ -115,7 +115,7 @@
 				2CF07D6D2F96E28E0095C2F6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2CF07D692F96E28E0095C2F6 /* swift-agents-skillsTests */,
+				2CF07D692F96E28E0095C2F6 /* SwiftAgentsTests */,
 			);
 			name = "swift-agents-skillsTests";
 			packageProductDependencies = (
@@ -168,7 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C350E922F9ADA3500E64AA2 /* CODEX.md in Resources */,
+				2C350E922F9ADA3500E64AA2 /* AGENTS.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
