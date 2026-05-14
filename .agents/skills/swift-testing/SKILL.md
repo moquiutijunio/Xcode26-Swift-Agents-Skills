@@ -16,11 +16,11 @@ This skill provides expert guidance on Swift Testing, covering the modern Swift 
 When a developer needs testing guidance, follow this decision tree:
 
 1. **Starting fresh with Swift Testing?**
-   - Read `References/test-organization.md` for suites, tags, traits
-   - Read `References/async-testing.md` for async test patterns
+   - Read `references/test-organization.md` for suites, tags, traits
+   - Read `references/async-testing.md` for async test patterns
 
 2. **Migrating from XCTest?**
-   - Read `References/migration-xctest.md` for migration guide
+   - Read `references/migration-xctest.md` for migration guide
 
 ## Core Syntax
 
@@ -118,6 +118,6 @@ Stops test execution on failure:
 
 Load these files as needed for specific topics:
 
-- **`References/test-organization.md`** - Suites, tags, traits, parallel execution
-- **`References/async-testing.md`** - Async patterns, confirmation, timeouts, cancellation
-- **`References/migration-xctest.md`** - Complete XCTest to Swift Testing migration guide
+- **`references/test-organization.md`** - Suites, tags, traits, parallel execution
+- **`references/async-testing.md`** - Async patterns, confirmation, timeouts, cancellation
+- **`references/migration-xctest.md`** - Complete XCTest to Swift Testing migration guide

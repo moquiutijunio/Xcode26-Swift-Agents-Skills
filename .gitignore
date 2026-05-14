@@ -1,0 +1,56 @@
+# macOS
+.DS_Store
+
+# Xcode User Data
+xcuserdata/
+*.xcuserstate
+
+# Xcode Build
+build/
+DerivedData/
+
+# Swift Package Manager
+.build/
+Packages/
+
+# CocoaPods
+Pods/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# Environment
+.env
+
+# Xcode Cloud
+ci_scripts/*.env
+
+# Agents / AI
+# (mantenha as skills versionadas)
+# Ignora apenas arquivos temporários caso existam
+.agents/**/*.tmp
+
+# Sublime
+*.sublime-workspace
+
+# VSCode
+.vscode/
+
+# Cursor
+.cursor/
+
+# Claude
+.claude/local/
+
+# Node
+node_modules/

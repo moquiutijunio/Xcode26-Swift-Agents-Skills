@@ -12,6 +12,12 @@
 - Navigation uses NavigationStack with NavagtionPath - Never NavigationView
 - Dependency injection through the SwiftUI enviroment
 
+## Testing
+- Use Swift Testing framework - NOT XCTest
+- Test functions us @Test attribute
+- Use #expect() for assertions - NOT XCTAssertEqual
+- Run with RunAllTests or RunSomeTests MCP Tools
+
 ## Communication and Scope of Actions
 To avoid unexpected changes to the project, follow these communication rules:
 
