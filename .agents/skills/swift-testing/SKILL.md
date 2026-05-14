@@ -1,3 +1,8 @@
+---
+name: swift-testing
+description: Use this skill when migrating XCTest tests to Swift Testing, creating Swift unit tests, organizing Swift Testing suites, or reviewing test code.
+---
+
 # Swift Testing
 
 ## Overview
@@ -113,6 +118,18 @@ Stops test execution on failure:
     }
 }
 ```
+
+## Activation
+
+Use this skill whenever the task involves:
+- Swift Testing
+- XCTest migration
+- unit tests
+- test organization
+- async tests
+
+For migration from XCTest, always read:
+- references/migration-xctest.md
 
 ## Reference Files
 

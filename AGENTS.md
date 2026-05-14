@@ -28,3 +28,7 @@ To avoid unexpected changes to the project, follow these communication rules:
 - If the user asks to only explain, research, or review, limit the response to explanation/research/review with no edits.
 - Never guess requirements or proactively implement anything without a clear instruction from the user.
 - If a change could have broad impact, highlight potential effects and confirm the desired scope when necessary before executing.
+
+## Skills
+When the user asks to create, migrate, organize, or review tests, use:
+- `.copilot/skills/swift-testing/SKILL.md`
