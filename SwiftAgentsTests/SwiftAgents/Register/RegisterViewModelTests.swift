@@ -6,172 +6,138 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import swift_agents_skills
 
-final class RegisterViewModelTests: XCTestCase {
-    // MARK: - Full Name Validation
-    func testFullNameValidationRejectsEmptyAndSingleWord() {
+@Suite("RegisterViewModel")
+struct RegisterViewModelTests {
+    @Test func fullNameValidationRejectsEmptyAndSingleWord() {
         let vm = RegisterViewModel()
-
         vm.fullName = ""
-        XCTAssertEqual(vm.fullNameError, "Informe seu nome completo")
-
+        #expect(vm.fullNameError == "Informe seu nome completo")
         vm.fullName = "Alice"
-        XCTAssertEqual(vm.fullNameError, "Digite nome e sobrenome")
+        #expect(vm.fullNameError == "Digite nome e sobrenome")
     }
 
-    func testFullNameValidationAcceptsNameAndSurname() {
+    @Test func fullNameValidationAcceptsNameAndSurname() {
         let vm = RegisterViewModel()
         vm.fullName = "Alice Silva"
-        XCTAssertNil(vm.fullNameError)
+        #expect(vm.fullNameError == nil)
     }
 
-    func testFullNameValidationTrimsWhitespaceAndMultipleSpaces() {
+    @Test func fullNameValidationTrimsWhitespaceAndMultipleSpaces() {
         let vm = RegisterViewModel()
         vm.fullName = "   Alice    Silva   "
-        XCTAssertNil(vm.fullNameError)
+        #expect(vm.fullNameError == nil)
     }
 
-    // MARK: - Email Validation
-    func testEmailValidationRejectsEmptyAndInvalid() {
+    @Test func emailValidationRejectsEmptyAndInvalid() {
         let vm = RegisterViewModel()
-
         vm.email = ""
-        XCTAssertEqual(vm.emailError, "Informe seu e-mail")
-
+        #expect(vm.emailError == "Informe seu e-mail")
         vm.email = "invalid"
-        XCTAssertEqual(vm.emailError, "E-mail inválido")
+        #expect(vm.emailError == "E-mail inválido")
     }
 
-    func testEmailValidationAcceptsValidAndUppercaseAndTrimmed() {
+    @Test func emailValidationAcceptsValidAndUppercaseAndTrimmed() {
         let vm = RegisterViewModel()
-
         vm.email = "user@example.com"
-        XCTAssertNil(vm.emailError)
-
+        #expect(vm.emailError == nil)
         vm.email = "USER@EXAMPLE.COM"
-        XCTAssertNil(vm.emailError)
-
+        #expect(vm.emailError == nil)
         vm.email = "   user@example.com   "
-        XCTAssertNil(vm.emailError)
+        #expect(vm.emailError == nil)
     }
 
-    // MARK: - Confirm Email Validation
-    func testConfirmEmailRejectsEmptyInvalidAndMismatch() {
+    @Test func confirmEmailRejectsEmptyInvalidAndMismatch() {
         let vm = RegisterViewModel()
         vm.email = "user@example.com"
-
         vm.confirmEmail = ""
-        XCTAssertEqual(vm.confirmEmailError, "Confirme seu e-mail")
-
+        #expect(vm.confirmEmailError == "Confirme seu e-mail")
         vm.confirmEmail = "invalid"
-        XCTAssertEqual(vm.confirmEmailError, "E-mail inválido")
-
+        #expect(vm.confirmEmailError == "E-mail inválido")
         vm.confirmEmail = "user2@example.com"
-        XCTAssertEqual(vm.confirmEmailError, "Os e-mails não coincidem")
+        #expect(vm.confirmEmailError == "Os e-mails não coincidem")
     }
 
-    // MARK: - Password Validation
-    func testPasswordValidationRejectsEmptyAndShort() {
+    @Test func passwordValidationRejectsEmptyAndShort() {
         let vm = RegisterViewModel()
-
         vm.password = ""
-        XCTAssertEqual(vm.passwordError, "Informe sua senha")
-
+        #expect(vm.passwordError == "Informe sua senha")
         vm.password = "12345"
-        XCTAssertEqual(vm.passwordError, "A senha deve ter no mínimo 6 caracteres")
+        #expect(vm.passwordError == "A senha deve ter no mínimo 6 caracteres")
     }
 
-    func testPasswordValidationAcceptsMinimumLength() {
+    @Test func passwordValidationAcceptsMinimumLength() {
         let vm = RegisterViewModel()
         vm.password = "123456"
-        XCTAssertNil(vm.passwordError)
+        #expect(vm.passwordError == nil)
     }
 
-    // MARK: - Confirm Password Validation
-    func testConfirmPasswordRejectsEmptyShortAndMismatch() {
+    @Test func confirmPasswordRejectsEmptyShortAndMismatch() {
         let vm = RegisterViewModel()
         vm.password = "123456"
-
         vm.confirmPassword = ""
-        XCTAssertEqual(vm.confirmPasswordError, "Confirme sua senha")
-
+        #expect(vm.confirmPasswordError == "Confirme sua senha")
         vm.confirmPassword = "12345"
-        XCTAssertEqual(vm.confirmPasswordError, "A senha deve ter no mínimo 6 caracteres")
-
+        #expect(vm.confirmPasswordError == "A senha deve ter no mínimo 6 caracteres")
         vm.confirmPassword = "654321"
-        XCTAssertEqual(vm.confirmPasswordError, "As senhas não coincidem")
+        #expect(vm.confirmPasswordError == "As senhas não coincidem")
     }
 
-    func testConfirmPasswordAcceptsMatchWithMinimumLength() {
+    @Test func confirmPasswordAcceptsMatchWithMinimumLength() {
         let vm = RegisterViewModel()
         vm.password = "abcdef"
         vm.confirmPassword = "abcdef"
-        XCTAssertNil(vm.confirmPasswordError)
+        #expect(vm.confirmPasswordError == nil)
     }
 
-    // MARK: - isFormValid
-    func testIsFormValidOnlyWhenAllFieldsValid() {
+    @Test func isFormValidOnlyWhenAllFieldsValid() {
         let vm = RegisterViewModel()
-
-        // Initially invalid
-        XCTAssertFalse(vm.isFormValid)
-
+        #expect(vm.isFormValid == false)
         vm.fullName = "Alice Silva"
         vm.email = "user@example.com"
         vm.confirmEmail = "user@example.com"
         vm.password = "123456"
         vm.confirmPassword = "123456"
-
-        XCTAssertTrue(vm.isFormValid)
-
-        // Invalidate one field
+        #expect(vm.isFormValid)
         vm.confirmPassword = "654321"
-        XCTAssertFalse(vm.isFormValid)
+        #expect(!vm.isFormValid)
     }
 
-    func testIsFormValidTrimsAndCaseInsensitiveForEmails() {
+    @Test func isFormValidTrimsAndCaseInsensitiveForEmails() {
         let vm = RegisterViewModel()
-
         vm.fullName = "  Alice   Silva  "
         vm.email = "   user@example.com   "
         vm.confirmEmail = "USER@EXAMPLE.COM"
         vm.password = "123456"
         vm.confirmPassword = "123456"
-
-        XCTAssertTrue(vm.isFormValid)
+        #expect(vm.isFormValid)
     }
 
-    // MARK: - Edit Flags
-    func testEditFlagsAreMarkedWhenRequested() {
+    @Test func editFlagsAreMarkedWhenRequested() {
         let vm = RegisterViewModel()
-
         vm.markFullNameAsEdited()
         vm.markEmailAsEdited()
         vm.markConfirmEmailAsEdited()
         vm.markPasswordAsEdited()
         vm.markConfirmPasswordAsEdited()
-
-        XCTAssertTrue(vm.didEditFullName)
-        XCTAssertTrue(vm.didEditEmail)
-        XCTAssertTrue(vm.didEditConfirmEmail)
-        XCTAssertTrue(vm.didEditPassword)
-        XCTAssertTrue(vm.didEditConfirmPassword)
+        #expect(vm.didEditFullName)
+        #expect(vm.didEditEmail)
+        #expect(vm.didEditConfirmEmail)
+        #expect(vm.didEditPassword)
+        #expect(vm.didEditConfirmPassword)
     }
 
-    // MARK: - Create Account
-    func testCreateAccountDoesNotCrash() {
+    @Test func createAccountDoesNotCrash() {
         let vm = RegisterViewModel()
         vm.fullName = "Alice Silva"
         vm.email = "user@example.com"
         vm.confirmEmail = "user@example.com"
         vm.password = "123456"
         vm.confirmPassword = "123456"
-
-        // Should be callable and not crash; currently prints a message
         vm.createAccount()
-        XCTAssertTrue(true)
+        #expect(true)
     }
 }
 
